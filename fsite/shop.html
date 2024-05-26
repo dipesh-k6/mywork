@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+  <header class="text-gray-650 body-font bg-blue-500 shadow-md border border-blue-500 rounded-lg">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+        <a href="#" class="flex title-font font-medium items-center text-gray-850 mb-4 md:mb-0">
+             
+            <span class="ml-3 text-xl">Udaya Pharmacy</span>
+        </a>
+        <nav class=" md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400 flex flex-wrap items-center text-base font-bold justify-center ">
+            <a href="index.html" class="mr-5 hover:text-green-400">Home</a>
+            <a href="about.html" class="mr-5 hover:text-green-400">About</a>
+            <a href="services.html" class="mr-5 hover:text-green-400">Services</a>
+            <a href="contact.html" class="mr-5 hover:text-green-400">Contact</a>
+        <span> <button id="toggleBackground" class="inline-flex items-center bg-indigo-500 border-0 py-1 px-3 focus:outline-none hover:bg-indigo-600 rounded text-white text-base mt-1 md:mt-0">
+              Toggle Background
+          </button> </span>
+        </nav>
+        
+        <button id="buyButton" class="inline-flex items-center bg-indigo-500 border-0 py-1 px-5 focus:outline-none hover:bg-indigo-600 rounded text-white text-base mt-4 md:mt-0 text-center">Buy
+            
+          <svg width="50px" height="50px" viewBox="-819.2 -819.2 2662.40 2662.40" class="icon " version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#fafafa" stroke="#fafafa" stroke-width="1.024"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="4.096"></g><g id="SVGRepo_iconCarrier"><path d="M960.1 258.4H245.8l-36.1-169H63.9v44h110.2l26.7 125 100.3 469.9 530 0.4v-44l-494.4-0.3-22.6-105.9H832l128.1-320.1z m-65 44L855.6 401H276.3l-21.1-98.6h639.9zM304.8 534.5L279.7 417h569.5l-47 117.5H304.8z" fill="#ffffff"></path><path d="M375.6 810.6c28.7 0 52 23.3 52 52s-23.3 52-52 52-52-23.3-52-52 23.3-52 52-52m0-20c-39.7 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.3-72-72-72zM732 810.6c28.7 0 52 23.3 52 52s-23.3 52-52 52-52-23.3-52-52 23.3-52 52-52m0-20c-39.7 0-72 32.2-72 72s32.2 72 72 72c39.7 0 72-32.2 72-72s-32.3-72-72-72zM447.5 302.4h16v232.1h-16zM652 302.4h16v232.1h-16z" fill="#E73B37"></path><path d="M276.3 401l3.4 16-3.4-16z" fill="#ffffff"></path></g></svg>
+        </button>
+        
+    </div>
+
+    
+  <script>
+    document.getElementById('buyButton').addEventListener('click', function() {
+      alert('No items selected');
+  });
+    document.addEventListener('DOMContentLoaded', function() {
+        const toggleButton = document.getElementById('toggleBackground');
+    
+        toggleButton.addEventListener('click', function() {
+            const body = document.body;
+    
+            if (body.classList.contains('bg-gray-100')) {
+                // Switch to dark background
+                body.classList.remove('bg-gray-100');
+                body.classList.add('bg-gray-900');
+    
+                // Change text color to white
+                changeTextColor('text-gray-600', 'text-white');
+                changeTextColor('text-gray-900', 'text-white');
+            } else {
+                // Switch to light background
+                body.classList.remove('bg-gray-900');
+                body.classList.add('bg-gray-100');
+    
+                // Change text color to black
+                changeTextColor('text-white', 'text-gray-600');
+                changeTextColor('text-gray-900', 'text-gray-600');
+            }
+        });
+    
+        function changeTextColor(fromClass, toClass) {
+            const elements = document.querySelectorAll(`.${fromClass}`);
+    
+            elements.forEach(element => {
+                if (!element.closest('button')) { // Exclude text inside button
+                    element.classList.remove(fromClass);
+                    element.classList.add(toClass);
+                }
+            });
+        }
+    });
+    
+    
+</script>
+</header>
+
+
+    <section class="text-gray-600 body-font">
+        <div class="container px-5 py-8 mx-auto flex flex-wrap">
+          <div class="flex flex-wrap -m-4">
+            <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+              <a class="block relative h-48 rounded overflow-hidden">
+                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/420x260">
+              </a>
+              <div class="mt-4">
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                <h2 class="text-gray-900 title-font text-lg font-medium">The Catalyzer</h2>
+                <p class="mt-1">$16.00</p>
+              </div>
+            </div>
+            <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+              <a class="block relative h-48 rounded overflow-hidden">
+                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/421x261">
+              </a>
+              <div class="mt-4">
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                <h2 class="text-gray-900 title-font text-lg font-medium">Shooting Stars</h2>
+                <p class="mt-1">$21.15</p>
+              </div>
+            </div>
+            <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+              <a class="block relative h-48 rounded overflow-hidden">
+                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/422x262">
+              </a>
+              <div class="mt-4">
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                <h2 class="text-gray-900 title-font text-lg font-medium">Neptune</h2>
+                <p class="mt-1">$12.00</p>
+              </div>
+            </div>
+            <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+              <a class="block relative h-48 rounded overflow-hidden">
+                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/423x263">
+              </a>
+              <div class="mt-4">
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                <h2 class="text-gray-900 title-font text-lg font-medium">The 400 Blows</h2>
+                <p class="mt-1">$18.40</p>
+              </div>
+            </div>
+            <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+              <a class="block relative h-48 rounded overflow-hidden">
+                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/424x264">
+              </a>
+              <div class="mt-4">
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                <h2 class="text-gray-900 title-font text-lg font-medium">The Catalyzer</h2>
+                <p class="mt-1">$16.00</p>
+              </div>
+            </div>
+            <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+              <a class="block relative h-48 rounded overflow-hidden">
+                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/425x265">
+              </a>
+              <div class="mt-4">
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                <h2 class="text-gray-900 title-font text-lg font-medium">Shooting Stars</h2>
+                <p class="mt-1">$21.15</p>
+              </div>
+            </div>
+            <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+              <a class="block relative h-48 rounded overflow-hidden">
+                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/427x267">
+              </a>
+              <div class="mt-4">
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                <h2 class="text-gray-900 title-font text-lg font-medium">Neptune</h2>
+                <p class="mt-1">$12.00</p>
+              </div>
+            </div>
+            <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+              <a class="block relative h-48 rounded overflow-hidden">
+                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/428x268">
+              </a>
+              <div class="mt-4">
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                <h2 class="text-gray-900 title-font text-lg font-medium">The 400 Blows</h2>
+                <p class="mt-1">$18.40</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <section class="text-gray-600 body-font">
+            <div class="container px-5  mx-auto">
+              <div class="flex flex-wrap -m-4">
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                  <a class="block relative h-48 rounded overflow-hidden">
+                    <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/420x260">
+                  </a>
+                  <div class="mt-4">
+                    <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                    <h2 class="text-gray-900 title-font text-lg font-medium">The Catalyzer</h2>
+                    <p class="mt-1">$16.00</p>
+                  </div>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                  <a class="block relative h-48 rounded overflow-hidden">
+                    <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/421x261">
+                  </a>
+                  <div class="mt-4">
+                    <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                    <h2 class="text-gray-900 title-font text-lg font-medium">Shooting Stars</h2>
+                    <p class="mt-1">$21.15</p>
+                  </div>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                  <a class="block relative h-48 rounded overflow-hidden">
+                    <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/422x262">
+                  </a>
+                  <div class="mt-4">
+                    <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                    <h2 class="text-gray-900 title-font text-lg font-medium">Neptune</h2>
+                    <p class="mt-1">$12.00</p>
+                  </div>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                  <a class="block relative h-48 rounded overflow-hidden">
+                    <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/423x263">
+                  </a>
+                  <div class="mt-4">
+                    <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                    <h2 class="text-gray-900 title-font text-lg font-medium">The 400 Blows</h2>
+                    <p class="mt-1">$18.40</p>
+                  </div>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                  <a class="block relative h-48 rounded overflow-hidden">
+                    <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/424x264">
+                  </a>
+                  <div class="mt-4">
+                    <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                    <h2 class="text-gray-900 title-font text-lg font-medium">The Catalyzer</h2>
+                    <p class="mt-1">$16.00</p>
+                  </div>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                  <a class="block relative h-48 rounded overflow-hidden">
+                    <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/425x265">
+                  </a>
+                  <div class="mt-4">
+                    <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                    <h2 class="text-gray-900 title-font text-lg font-medium">Shooting Stars</h2>
+                    <p class="mt-1">$21.15</p>
+                  </div>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                  <a class="block relative h-48 rounded overflow-hidden">
+                    <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/427x267">
+                  </a>
+                  <div class="mt-4">
+                    <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                    <h2 class="text-gray-900 title-font text-lg font-medium">Neptune</h2>
+                    <p class="mt-1">$12.00</p>
+                  </div>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                  <a class="block relative h-48 rounded overflow-hidden">
+                    <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/428x268">
+                  </a>
+                  <div class="mt-4">
+                    <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                    <h2 class="text-gray-900 title-font text-lg font-medium">The 400 Blows</h2>
+                    <p class="mt-1">$18.40</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+      </section>
+</body>
+</html>
